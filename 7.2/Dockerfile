@@ -2,8 +2,8 @@ FROM ubuntu:16.04
 
 MAINTAINER Armando Meeuwenoord <armando@codingexperts.nl>
 
-RUN sudo apt-get install -y software-properties-common && \
-    sudo add-apt-repository ppa:ondrej/php && \
+RUN apt-get install -y software-properties-common && \
+    add-apt-repository ppa:ondrej/php && \
     apt-get -y update && \
     apt-get -y --no-install-recommends install curl wget ca-certificates nano zip unzip git && \
     apt-get -y install \
