@@ -1,12 +1,12 @@
-FROM debian:stretch
+FROM ubuntu:16.04
 
-MAINTAINER Giuseppe Morelli <info@giuseppemorelli.net>
+MAINTAINER Armando Meeuwenoord <armando@codingexperts.nl>
 
-RUN apt-get -y update \
-    && apt-get -y install \
-    wget \
-    git \
-    curl \
+RUN sudo apt-get install -y software-properties-common && \
+    sudo add-apt-repository ppa:ondrej/php && \
+    apt-get -y update && \
+    apt-get -y --no-install-recommends install curl wget ca-certificates nano zip unzip git && \
+    apt-get -y install \
     php7.2-cli \
     php7.2-curl \
     php7.2-dev \
